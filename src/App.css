@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Nunito", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html:root {
+  --off-white: #c5c7d3;
+  --white: #ffffff;
+  --light-black: #2a3256;
+  --purple: #553afc;
 }
+body {
+  /* background-color: var(--off-white); */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: aliceblue;
+  background-image: linear-gradient(#fcf5f5, #eff4fd);
+  font-family: "Nunito", sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  background-color: var(--white);
+  box-shadow: 0px 16px 40px rgba(17, 17, 26, 0.15);
+}
+.logo_title {
+  display: flex;
+}
+.logo_title img {
+  width: 35px;
+  height: 35px;
+  margin-right: 0.5rem;
+}
+.logo_title span {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.menu_list {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.35rem;
+}
+/* ================================ */
+.main_div {
+  max-width: 968px;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+}
+.text_div {
+  position: relative;
+}
+.text_area {
+  width: calc(100% - 2.2rem);
+  height: 150px;
+  resize: none;
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+  color: black;
+  border: none;
+  font-size: 14px;
+}
+.text_area:focus {
+  outline: none;
+}
+.button_container {
+  position: relative;
+  display: flex;
+  border-radius: 7px;
+  z-index: 1;
+  margin-top: -50px;
+  margin-left: 4px;
+}
+.search_btn {
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color: transparent;
+}
+.voice_btn,
+.speaker_btn {
+  background-color: rgb(95, 95, 255);
   color: white;
+  border-radius: 50%;
+}
+.voice_btn::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 35px;
+  bottom: 0;
+  border: 2px solid blue;
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
+.speaker_btn::before {
+  position: absolute;
+  content: "";
+  left: 40px;
+  top: 0;
+  width: 35px;
+  bottom: 0;
+  border: 2px solid blue;
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
+}
+@keyframes animate {
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+.close_btn {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ============================== */
+
+.card_div {
+  max-width: 968px;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--white);
+  /* box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.15); */
+
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 16px 40px,
+    rgba(17, 17, 25, 0.15) 0px 0px 8px;
+}
+
+/* ======================== */
+.accordion_item {
+  width: 100%;
+  margin-bottom: 0.7rem;
+}
+.accordion_title {
+  display: flex;
+  background-color: #cfe2ff;
+  font-family: "Raleway", "sans-serif";
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 10px;
+  align-items: center;
+  padding-left: 0.5rem;
+  border: 1px solid #c1daff;
+  /* justify-content: space-between; */
+}
+.accordion_title button {
+  border: none;
+  background-color: #cfe2ff;
+  border-radius: 10px;
+  margin-top: 4px;
+  color: #084298;
+  /* margin-right: 0.5rem; */
+}
+.accordion_title > p {
+  cursor: pointer;
+  /* border-radius: 50%; */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  padding: 3px 5px;
+  align-self: center;
+  color: #084298;
+}
+
+.accordion_body {
+  padding: 20px 20px;
+  font-family: "Raleway", "sans-serif";
+  font-size: 15px;
+  word-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.7;
+  background-color: #ffe8e8;
+  color: rgba(40, 37, 53);
+  border-radius: 0px 0px 10px 10px;
+  margin-top: -6px;
+}
+.show_more_btn {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+.copy_btn {
+  border: none;
+  background-color: transparent;
+}
+.accordion_btn_container {
+  display: flex;
+  justify-content: end;
+  z-index: 1;
+  margin-top: 10px;
 }

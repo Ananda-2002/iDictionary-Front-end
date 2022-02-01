@@ -28,7 +28,7 @@ const Accordion = (props) => {
         })
 
         try {
-            const response = await fetch('http://localhost:8000/api/get-all',
+            const response = await fetch('https://i-dictionary.herokuapp.com/api/get-all',
                 {
                     mode: 'cors',
                     method: "POST",
